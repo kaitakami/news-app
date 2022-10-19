@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import styles from "../styles/PageLayout.module.css";
 
 const PageLayout = ({ children, title = "NewsApp" }) => {
@@ -12,7 +13,15 @@ const PageLayout = ({ children, title = "NewsApp" }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <header className={styles.header}>🗞️ NewsApp</header>
+      <header className={styles.header}>
+        <div>
+          <Link href="/home">🗞️ NewsApp</Link>
+        </div>
+        <div>
+          <Link href="/about">About</Link>
+        </div>
+      </header>
+
       <main>{children}</main>
     </>
   );
